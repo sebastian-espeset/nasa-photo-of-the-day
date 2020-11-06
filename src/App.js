@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./App.css";
 import axios from 'axios'
+import styled, { keyframes } from "styled-components";
 import Header from './components/header'
 import Image from './components/image'
 import Explanation from './components/explanation'
@@ -33,6 +34,9 @@ useEffect(()=>{
     fetchNasaData();
     ;
   },[]);
+  const FlexDiv = styled.div`
+    display:flex;
+  `
   
   return (
     <div className="App">
@@ -41,8 +45,10 @@ useEffect(()=>{
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p>
       <Header header = {header}/>
+      <FlexDiv>
       <Image image_url = {image_url}/>
       <Explanation explanation = {explanation}/>
+      </FlexDiv>
     </div>
   );
 }
